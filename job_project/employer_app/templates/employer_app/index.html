@@ -1,34 +1,55 @@
 {% extends "employer_app/base.html" %}
 {% load staticfiles %}
 {% block content %}
-      
-
-      <div class="row">
-        <div class="col-md-12">
-          <div class="box-body">
-              <p>Add the classes <code>.btn.btn-app</code> to an <code>&lt;a&gt;</code> tag to achieve the following:</p>
-              <a class="btn btn-app">
-                <i class="fa fa-plus-square"></i> Post a Job
-              </a>
-              <a class="btn btn-app">
-                <i class="fa fa-briefcase"></i> Company Jobs
-              </a>
-              <a class="btn btn-app">
-                <i class="fa fa-edit"></i> Edit Profile
-              </a>
-              <a class="btn btn-app">
-                <i class="fa fa-users"></i> Membership
-              </a>
-              <a class="btn btn-app">
-                <i class="fa fa-power-off"></i> Log Out
-              </a>
-              <a class="btn btn-app">
-                <i class="fa fa-exchange"></i> Change Password
-              </a>
-              <a class="btn btn-app">
-                <i class="fa fa-trash"></i> Delete Account
-              </a>
-            </div>
+<div class="row">
+  <div class="col-md-12">
+    <div class="box">
+      <div class="box-header with-border">
+        <h3 class="box-title">{{title}}</h3>
+        <div class="btn-group pull-right">
+          <a href="#" class="btn btn-primary btn-sm" role="button">Post a New Job</a>
+          <a href="#" class="btn btn-info btn-sm" role="button">Search CV Bank</a>
         </div>
       </div>
+      <!-- /.box-header -->
+      <div class="box-body">
+        <table class="table table-bordered">
+          <tbody>
+            <tr>
+              <th style="width: 10px">SL</th>
+              <th>Jobs Title</th>
+              <th>Application</th>
+              <th style="width:120px;text-align:center;">Action</th>
+            </tr>
+            {% for loc in locs %}
+            <tr>
+              <td>{{forloop.counter}}.</td>
+              <td>{{loc.name}}</td>
+              <td>{{loc.description}}</td>
+              <td align="center">
+                <div class="btn-group">
+                  <a href="#" class="btn btn-warning btn-sm" role="button"><i class="fa fa-edit"></i></a>
+                  <a href="#" class="btn btn-danger btn-sm" role="button"><i class="fa fa-trash"></i></a>
+                </div>
+              </td>
+
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+      <!-- /.box-body -->
+      <div class="box-footer clearfix">
+        <ul class="pagination pagination-sm no-margin pull-right">
+          <li><a href="#">«</a></li>
+          <li><a href="#">1</a></li>
+          <li><a href="#">2</a></li>
+          <li><a href="#">3</a></li>
+          <li><a href="#">»</a></li>
+        </ul>
+      </div>
+    </div>
+    <!-- /.box -->
+  </div>
+</div>
 {% endblock content %}
