@@ -1,0 +1,451 @@
+{% extends './base.html' %}
+{% load static %}
+{% block title %}{{title}}{% endblock title %}
+
+
+
+{% block parlax %}
+	<div class="container-fluid parlax" style="margin-bottom:10px;">
+			<div class="container">
+				<div class="row">
+					
+					<div class="col-md-8">
+						<div style="text-align:center; margin:75px 20px 30px 0; padding:30px; background:rgba(0,0,0,0.3);">
+							<div style="padding:30px; background:white">
+								<div class="row">
+								  <div class="col-md-6">
+									<input type="text" class="form-control" placeholder="Company Name / Job Title...">
+								  </div>
+								  <div class="col-md-4">
+										<select class="form-control" name="division">
+											<option value="">Choose Location</option>
+											{% for loc in locs %}
+												<option value="{{loc.id}}}">{{loc.name}}</option>
+											{% endfor %}
+										</select>
+								  </div>
+								  <div class="col-md-2">
+									<button type="button" class="btn btn-info">Search</button>
+								  </div>
+								</div>
+							
+							</div>
+						</div>
+					</div>
+					
+					<div class="col-md-4">
+						<div style="text-align:center; margin:30px 0px 30px 0; padding:30px; background:rgba(0,0,0,0.3);">
+							<div style="padding:30px; background:white">
+							<p>New to Jagojobs? </p>
+							<button type="button" class="btn btn-info btn-block">Register as Seeker</button>
+							<p>Or </p>
+							<button type="button" class="btn btn-default btn-block">Register as Employeer</button>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+	</div>
+{% endblock parlax %}
+
+{% block content %}
+	<!-- Bank Jobs Sections -->
+	<div class="all-jobs fix">
+		<div class="all-jobs-icon pull-left">
+			<span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span>
+		</div>
+		<span class="pull-left" style="margin:10px;">Bank Jobs</span>
+		<button class="btn btn-info pull-right" type="button" style="margin:3px;">View all jobs <span class="badge">4</span></button>
+	</div>
+
+	<div class="row">
+		<div class="col-md-4" style="margin-bottom:20px;">
+			<div class="media" style="min-height:150px;">
+			<h5 class="media-heading" style="font-weight:bold; padding:10px; border-bottom:1px solid #eee;">BRACK Bank</h5>
+			  <div class="media-left media-top">
+				<a href="#">
+				  <img class="media-object box-job-img" width="80" height="60" src="https://goo.gl/FvmZo6" alt="...">
+				</a>
+			  </div>
+			  <div class="media-body">
+				<ul style="font-size:12px; padding: 0; margin:5px 0px; list-style-type: none; line-height:20px; color:#999999;">
+					<li><span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span><a href="#"> Job Title Here ...</a></li>
+					<li><span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span><a href="#"> Job Title Here ...</a></li>
+					<li><span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span><a href="#"> Job Title Here ...</a></li>
+				</ul>
+			  </div>
+			</div>
+		</div>
+		<div class="col-md-4" style="margin-bottom:20px;">
+			<div class="media" style="min-height:150px;">
+			<h5 class="media-heading" style="font-weight:bold; padding:10px; border-bottom:1px solid #eee;">South Bangla Bank LTD</h5>
+			  <div class="media-left media-top">
+				<a href="#">
+				  <img class="media-object box-job-img" width="80" height="60" src="https://goo.gl/FvmZo6" alt="...">
+				</a>
+			  </div>
+			  <div class="media-body">
+				<ul style="font-size:12px; padding: 0; margin:5px 0px; list-style-type: none; line-height:20px; color:#999999;">
+					<li><span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span><a href="#"> Job Title Here ...</a></li>
+					<li><span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span><a href="#"> Job Title Here ...</a></li>
+					<li><span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span><a href="#"> Job Title Here ...</a></li>
+				</ul>
+			  </div>
+			</div>
+		</div>
+		<div class="col-md-4" style="margin-bottom:20px;">
+			<div class="media" style="min-height:150px;">
+			<h5 class="media-heading" style="font-weight:bold; padding:10px; border-bottom:1px solid #eee;">Bangladesh Bank</h5>
+			  <div class="media-left media-top">
+				<a href="#">
+				  <img class="media-object box-job-img" width="80" height="60" src="https://goo.gl/FvmZo6" alt="...">
+				</a>
+			  </div>
+			  <div class="media-body">
+				<ul style="font-size:12px; padding: 0; margin:5px 0px; list-style-type: none; line-height:20px; color:#999999;">
+					<li><span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span><a href="#"> Job Title Here ...</a></li>
+					<li><span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span><a href="#"> Job Title Here ...</a></li>
+					<li><span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span><a href="#"> Job Title Here ...</a></li>
+				</ul>
+			  </div>
+			</div>
+		</div>
+	</div>
+
+
+	<!-- Female, NGO & Diploma Jobs Sections -->
+	<div class="row">
+		<div class="col-md-4">
+			<a href="#">
+				<div class="thumbnail fix" style="padding:0px;">
+				  <img src="https://goo.gl/FvmZo6" alt="...">
+				  <div class="caption" style="text-align:center;padding:5px !important; font-weight:bold;">
+					<div><span class="glyphicon glyphicon-tag"></span> Female Jobs</div>
+				  </div>
+				</div>
+			</a>
+		</div>
+		
+		<div class="col-md-4">
+			<a href="#">
+				<div class="thumbnail fix" style="padding:0px;">
+				  <img src="https://goo.gl/FvmZo6" alt="...">
+				  <div class="caption" style="text-align:center;padding:5px !important; font-weight:bold;">
+					<div><span class="glyphicon glyphicon-tag"></span> NGO Jobs</div>
+				  </div>
+				</div>
+			</a>
+		</div>
+		
+		<div class="col-md-4">
+			<a href="#">
+				<div class="thumbnail fix" style="padding:0px;">
+				  <img src="https://goo.gl/FvmZo6" alt="...">
+				  <div class="caption" style="text-align:center;padding:5px !important; font-weight:bold;">
+					<div><span class="glyphicon glyphicon-tag"></span> Diploma Jobs</div>
+				  </div>
+				</div>
+			</a>
+		</div>
+	</div>
+
+
+	<!-- Categories wise jobs sections -->
+	<div class="all-jobs fix">
+		<div class="all-jobs-icon pull-left">
+			<span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span>
+		</div>
+		<span class="pull-left" style="margin:10px;">Category Based Jobs</span>
+		<button class="btn btn-info pull-right" type="button" style="margin:3px;">View all jobs <span class="badge">1392</span></button>
+	</div>
+
+	<div class="row">
+		<div class="col-md-4" style="margin-bottom:10px;">
+			<a href="#">
+				<div class="category-list-icon">
+					<div class="cat-jobs-icon pull-left MediumTurquoise">
+						<span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span>
+					</div>
+					<span class="pull-left" style="margin: 4px 15px;">Account & Finance Jobs</span>
+				</div>
+			</a>
+		</div>
+		<div class="col-md-4" style="margin-bottom:10px;">
+			<a href="#">
+				<div class="category-list-icon">
+					<div class="cat-jobs-icon pull-left MediumTurquoise">
+						<span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span>
+					</div>
+					<span class="pull-left" style="margin: 4px 15px;">NGO / Developments</span>
+				</div>
+			</a>
+		</div>
+		<div class="col-md-4" style="margin-bottom:10px;">
+			<a href="#">
+				<div class="category-list-icon">
+					<div class="cat-jobs-icon pull-left MediumTurquoise">
+						<span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span>
+					</div>
+					<span class="pull-left" style="margin: 4px 15px;">Driving & Motor Technician</span>
+				</div>
+			</a>
+		</div>
+		
+		<div class="col-md-4" style="margin-bottom:10px;">
+			<a href="#">
+				<div class="category-list-icon">
+					<div class="cat-jobs-icon pull-left MediumSeaGreen">
+						<span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span>
+					</div>
+					<span class="pull-left" style="margin: 4px 15px;">Account & Finance Jobs</span>
+				</div>
+			</a>
+		</div>
+		
+		<div class="col-md-4" style="margin-bottom:10px;">
+			<a href="#">
+				<div class="category-list-icon">
+					<div class="cat-jobs-icon pull-left MediumSeaGreen">
+						<span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span>
+					</div>
+					<span class="pull-left" style="margin: 4px 15px;">Driving & Motor Technician</span>
+				</div>
+			</a>
+		</div>
+		
+		<div class="col-md-4" style="margin-bottom:10px;">
+			<a href="#">
+				<div class="category-list-icon">
+					<div class="cat-jobs-icon pull-left MediumSeaGreen">
+						<span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span>
+					</div>
+					<span class="pull-left" style="margin: 4px 15px;">NGO / Developments</span>
+				</div>
+			</a>
+		</div>
+		
+		<div class="col-md-4" style="margin-bottom:10px;">
+			<a href="#">
+				<div class="category-list-icon">
+					<div class="cat-jobs-icon pull-left YellowGreen">
+						<span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span>
+					</div>
+					<span class="pull-left" style="margin: 4px 15px;">Account & Finance Jobs</span>
+				</div>
+			</a>
+		</div>
+		
+		<div class="col-md-4" style="margin-bottom:10px;">
+			<a href="#">
+				<div class="category-list-icon">
+					<div class="cat-jobs-icon pull-left YellowGreen">
+						<span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span>
+					</div>
+					<span class="pull-left" style="margin: 4px 15px;">Driving & Motor Technician</span>
+				</div>
+			</a>
+		</div>
+		
+		<div class="col-md-4" style="margin-bottom:10px;">
+			<a href="#">
+				<div class="category-list-icon">
+					<div class="cat-jobs-icon pull-left YellowGreen">
+						<span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span>
+					</div>
+					<span class="pull-left" style="margin: 4px 15px;">NGO / Developments</span>
+				</div>
+			</a>
+		</div>
+	</div>
+
+
+	<!--  Government Jobs Sections -->
+	<div class="all-jobs fix">
+		<div class="all-jobs-icon pull-left">
+			<span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span>
+		</div>
+		<span class="pull-left" style="margin:10px;"> Government Jobs</span>
+		<button class="btn btn-info pull-right" type="button" style="margin:3px;">View all jobs <span class="badge">4</span></button>
+	</div>
+
+	<div class="row">
+		<div class="col-md-4" style="margin-bottom:20px;">
+			<div class="media" style="min-height:150px;">
+			<h5 class="media-heading" style="font-weight:bold; padding:10px; border-bottom:1px solid #eee;">Dhaka University</h5>
+			  <div class="media-left media-top">
+				<a href="#">
+				  <img class="media-object box-job-img" width="80" height="60" src="https://goo.gl/FvmZo6" alt="...">
+				</a>
+			  </div>
+			  <div class="media-body">
+				<ul style="font-size:12px; padding: 0; margin:5px 0px; list-style-type: none; line-height:20px; color:#999999;">
+					<li><span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span><a href="#"> Job Title Here ...</a></li>
+					<li><span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span><a href="#"> Job Title Here ...</a></li>
+					<li><span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span><a href="#"> Job Title Here ...</a></li>
+				</ul>
+			  </div>
+			</div>
+		</div>
+		<div class="col-md-4" style="margin-bottom:20px;">
+			<div class="media" style="min-height:150px;">
+			<h5 class="media-heading" style="font-weight:bold; padding:10px; border-bottom:1px solid #eee;">Primary Education Board</h5>
+			  <div class="media-left media-top">
+				<a href="#">
+				  <img class="media-object box-job-img" width="80" height="60" src="https://goo.gl/FvmZo6" alt="...">
+				</a>
+			  </div>
+			  <div class="media-body">
+				<ul style="font-size:12px; padding: 0; margin:5px 0px; list-style-type: none; line-height:20px; color:#999999;">
+					<li><span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span><a href="#"> Job Title Here ...</a></li>
+					<li><span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span><a href="#"> Job Title Here ...</a></li>
+					<li><span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span><a href="#"> Job Title Here ...</a></li>
+				</ul>
+			  </div>
+			</div>
+		</div>
+		<div class="col-md-4" style="margin-bottom:20px;">
+			<div class="media" style="min-height:150px;">
+			<h5 class="media-heading" style="font-weight:bold; padding:10px; border-bottom:1px solid #eee;">Directory of Agriculture</h5>
+			  <div class="media-left media-top">
+				<a href="#">
+				  <img class="media-object box-job-img" width="80" height="60" src="https://goo.gl/FvmZo6" alt="...">
+				</a>
+			  </div>
+			  <div class="media-body">
+				<ul style="font-size:12px; padding: 0; margin:5px 0px; list-style-type: none; line-height:20px; color:#999999;">
+					<li><span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span><a href="#"> Job Title Here ...</a></li>
+					<li><span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span><a href="#"> Job Title Here ...</a></li>
+					<li><span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span><a href="#"> Job Title Here ...</a></li>
+				</ul>
+			  </div>
+			</div>
+		</div>
+	</div>
+						
+	<!--  Exclusive Jobs Sections -->
+	<div class="all-jobs fix">
+		<div class="all-jobs-icon pull-left">
+			<span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span>
+		</div>
+		<span class="pull-left" style="margin:10px;"> Exclusive Jobs</span>
+		<button class="btn btn-info pull-right" type="button" style="margin:3px;">View all jobs <span class="badge">4</span></button>
+	</div>
+
+	<div class="row">
+		<div class="col-md-4" style="margin-bottom:20px;">
+			<div class="media" style="min-height:150px;">
+			<h5 class="media-heading" style="font-weight:bold; padding:10px; border-bottom:1px solid #eee;">OPPO</h5>
+			  <div class="media-left media-top">
+				<a href="#">
+				  <img class="media-object box-job-img" width="80" height="60" src="https://goo.gl/FvmZo6" alt="...">
+				</a>
+			  </div>
+			  <div class="media-body">
+				<ul style="font-size:12px; padding: 0; margin:5px 0px; list-style-type: none; line-height:20px; color:#999999;">
+					<li><span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span><a href="#"> Job Title Here ...</a></li>
+					<li><span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span><a href="#"> Job Title Here ...</a></li>
+					<li><span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span><a href="#"> Job Title Here ...</a></li>
+				</ul>
+			  </div>
+			</div>
+		</div>
+		<div class="col-md-4" style="margin-bottom:20px;">
+			<div class="media" style="min-height:150px;">
+			<h5 class="media-heading" style="font-weight:bold; padding:10px; border-bottom:1px solid #eee;">Arong</h5>
+			  <div class="media-left media-top">
+				<a href="#">
+				  <img class="media-object box-job-img" width="80" height="60" src="https://goo.gl/FvmZo6" alt="...">
+				</a>
+			  </div>
+			  <div class="media-body">
+				<ul style="font-size:12px; padding: 0; margin:5px 0px; list-style-type: none; line-height:20px; color:#999999;">
+					<li><span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span><a href="#"> Job Title Here ...</a></li>
+					<li><span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span><a href="#"> Job Title Here ...</a></li>
+					<li><span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span><a href="#"> Job Title Here ...</a></li>
+				</ul>
+			  </div>
+			</div>
+		</div>
+		<div class="col-md-4" style="margin-bottom:20px;">
+			<div class="media" style="min-height:150px;">
+			<h5 class="media-heading" style="font-weight:bold; padding:10px; border-bottom:1px solid #eee;">Yellow</h5>
+			  <div class="media-left media-top">
+				<a href="#">
+				  <img class="media-object box-job-img" width="80" height="60" src="https://goo.gl/FvmZo6" alt="...">
+				</a>
+			  </div>
+			  <div class="media-body">
+				<ul style="font-size:12px; padding: 0; margin:5px 0px; list-style-type: none; line-height:20px; color:#999999;">
+					<li><span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span><a href="#"> Job Title Here ...</a></li>
+					<li><span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span><a href="#"> Job Title Here ...</a></li>
+					<li><span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span><a href="#"> Job Title Here ...</a></li>
+				</ul>
+			  </div>
+			</div>
+		</div>
+		
+		<div class="col-md-4" style="margin-bottom:20px;">
+			<div class="media" style="min-height:150px;">
+			<h5 class="media-heading" style="font-weight:bold; padding:10px; border-bottom:1px solid #eee;">State University</h5>
+			  <div class="media-left media-top">
+				<a href="#">
+				  <img class="media-object box-job-img" width="80" height="60" src="https://goo.gl/FvmZo6" alt="...">
+				</a>
+			  </div>
+			  <div class="media-body">
+				<ul style="font-size:12px; padding: 0; margin:5px 0px; list-style-type: none; line-height:20px; color:#999999;">
+					<li><span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span><a href="#"> Job Title Here ...</a></li>
+					<li><span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span><a href="#"> Job Title Here ...</a></li>
+					<li><span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span><a href="#"> Job Title Here ...</a></li>
+				</ul>
+			  </div>
+			</div>
+		</div>
+		<div class="col-md-4" style="margin-bottom:20px;">
+			<div class="media" style="min-height:150px;">
+			<h5 class="media-heading" style="font-weight:bold; padding:10px; border-bottom:1px solid #eee;">Pran RFL</h5>
+			  <div class="media-left media-top">
+				<a href="#">
+				  <img class="media-object box-job-img" width="80" height="60" src="https://goo.gl/FvmZo6" alt="...">
+				</a>
+			  </div>
+			  <div class="media-body">
+				<ul style="font-size:12px; padding: 0; margin:5px 0px; list-style-type: none; line-height:20px; color:#999999;">
+					<li><span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span><a href="#"> Job Title Here ...</a></li>
+					<li><span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span><a href="#"> Job Title Here ...</a></li>
+					<li><span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span><a href="#"> Job Title Here ...</a></li>
+				</ul>
+			  </div>
+			</div>
+		</div>
+		<div class="col-md-4" style="margin-bottom:20px;">
+			<div class="media" style="min-height:150px;">
+			<h5 class="media-heading" style="font-weight:bold; padding:10px; border-bottom:1px solid #eee;">Raddison Blu</h5>
+			  <div class="media-left media-top">
+				<a href="#">
+				  <img class="media-object box-job-img" width="80" height="60" src="https://goo.gl/FvmZo6" alt="...">
+				</a>
+			  </div>
+			  <div class="media-body">
+				<ul style="font-size:12px; padding: 0; margin:5px 0px; list-style-type: none; line-height:20px; color:#999999;">
+					<li><span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span><a href="#"> Job Title Here ...</a></li>
+					<li><span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span><a href="#"> Job Title Here ...</a></li>
+					<li><span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span><a href="#"> Job Title Here ...</a></li>
+				</ul>
+			  </div>
+			</div>
+		</div>
+	</div>
+{% endblock content %}
+
+
+{% block sidebar %}
+	<div class="fix">
+		<img src="https://goo.gl/T1Ziwf" style="width:265px; height:600px;"/>
+	</div>
+
+	<div class="fix">
+		<img src="https://goo.gl/T1Ziwf" style="width:265px; height:600px;"/>
+	</div>
+{% endblock sidebar %}
