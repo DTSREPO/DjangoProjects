@@ -1,7 +1,7 @@
 from django.shortcuts import render
 
 # Create your views here.
-def home(request):
-    template = 'employer_app/emp_dashboard.html'
+def employer_view(request):
+    template = 'employer_app/index.html'
     context = {'title': 'Employer'}
     return render(request, template, context)
