@@ -1,0 +1,34 @@
+{% extends "admin_app/base.html" %}
+{% load staticfiles %}
+{% block dashboard %}
+      
+
+      <div class="row">
+        <div class="col-md-12">
+          <div class="box-body">
+              <p>Add the classes <code>.btn.btn-app</code> to an <code>&lt;a&gt;</code> tag to achieve the following:</p>
+              <a class="btn btn-app">
+                <i class="fa fa-plus-square"></i> Post a Job
+              </a>
+              <a class="btn btn-app">
+                <i class="fa fa-briefcase"></i> Company Jobs
+              </a>
+              <a class="btn btn-app">
+                <i class="fa fa-edit"></i> Edit Profile
+              </a>
+              <a class="btn btn-app">
+                <i class="fa fa-users"></i> Membership
+              </a>
+              <a class="btn btn-app">
+                <i class="fa fa-power-off"></i> Log Out
+              </a>
+              <a class="btn btn-app">
+                <i class="fa fa-exchange"></i> Change Password
+              </a>
+              <a class="btn btn-app">
+                <i class="fa fa-trash"></i> Delete Account
+              </a>
+            </div>
+        </div>
+      </div>
+{% endblock dashboard %}

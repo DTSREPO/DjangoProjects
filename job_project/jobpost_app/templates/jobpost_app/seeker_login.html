@@ -1,0 +1,95 @@
+{% extends './base.html' %}
+{% load static %}
+
+{% block title %}{{title}}{% endblock title %}
+
+{% block parlax %}
+	<!-- This div like a separator -->
+	<div style="margin-top:100px; width:100%"></div> 
+{% endblock parlax %}
+
+{% block content %}
+	<div style="min-height: 350px; padding:30px; margin: 0 0 30px 0; background: #ffffff; overflow: hidden;">
+		<form>
+			<div class="col-md-12">
+				<div class="row">
+					<div class="col-md-6 form-group">
+						<label>First Name</label>
+						<input type="text" placeholder="Enter First Name Here.." class="form-control">
+					</div>
+					<div class="col-md-6 form-group">
+						<label>Last Name</label>
+						<input type="text" placeholder="Enter Last Name Here.." class="form-control">
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-6 form-group">
+						<label>Email Address</label>
+						<input type="text" placeholder="Enter Email Address Here.." class="form-control">
+					</div>
+					<div class="col-md-6 form-group">
+						<label>Gender</label>
+						<input type="text" placeholder="Enter Last Name Here.." class="form-control">
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-6 form-group">
+						<label>Phone Number</label>
+						<input type="text" placeholder="Enter Phone Number Here.." class="form-control">
+					</div>
+					<div class="col-md-6 form-group">
+						<label>Jobs Category</label>
+						<select class="form-control">
+							{% for cat in cats %}
+							<option value="{{cat.id}}">{{cat.name}}</option>
+							{% endfor %}
+					    </select>
+					</div>
+				</div>
+				<hr>
+				<div class="row">
+					<div class="col-md-4 form-group">
+						<label>User Name</label>
+						<input type="text" placeholder="User Name" class="form-control">
+					</div>
+					<div class="col-md-4 form-group">
+						<label>Password</label>
+						<input type="password" placeholder="Password" class="form-control">
+					</div>
+					<div class="col-md-4 form-group">
+						<label>Confirm Pass.</label>
+						<input type="password" placeholder="Confirm Pass." class="form-control">
+					</div>
+				</div>	
+				
+			<button type="button" class="btn btn-info">Submit</button>					
+			</div>
+		</form>	
+	</div>
+{% endblock content %}
+
+
+{% block sidebar %}
+	<div class="all-jobs fix">
+		<div class="all-jobs-icon pull-left">
+			<span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+		</div>
+		<span class="pull-left" style="margin:10px;">Seeker Login</span>
+	</div>
+	<div style="padding:20px 10px; background: #ffffff;">
+		<p style="font-size: 13px; text-align: center; width: 100%; padding: 3px; margin-bottom: :15px; border-bottom: 1px dotted #eee;">Already have an account? Please Login.</p>
+		<form action="">
+		  <div class="form-group">
+		    <label for="exampleInputEmail1">Email address</label>
+		    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+		  </div>
+		  <div class="form-group">
+		    <label for="exampleInputPassword1">Password</label>
+		    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+		  </div>
+		  <button type="submit" class="btn btn-primary">Login</button>
+		  <br><br>
+		  <a href="#" style="font-size: 12px; text-align: right;">Forgot Password? </a>
+		</form>
+	</div>
+{% endblock sidebar %}

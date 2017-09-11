@@ -1,0 +1,10 @@
+.navbar{margin-bottom:0px;}
+.navbar-default{padding:10px 0px; background:#ffffff !important;}
+.navbar-brand{padding:15px;}
+.navbar-nav>li>.dropdown-menu{margin-top:10px !important}
+.panel-default{border-radius:0px;}
+.panel-default>.panel-heading{}
+.panel-body{padding:5px;}
+.pagination{margin:0px !important;}
+.media {padding:10px 0px; border-bottom:1px dotted #ddd;}
+.media-body a{text-decoration:none;}
