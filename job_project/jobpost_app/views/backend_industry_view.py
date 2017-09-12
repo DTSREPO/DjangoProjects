@@ -6,7 +6,7 @@ from django.views import View
 # Create your views here.
 def backend_industry_view(request):
   template="jobpost_app/backend/industry_list.html"
-  inds=Industry.objects.all()
+  inds=Industry.objects.filter(active=True)
   context={'title':'Industry List', 'inds':inds}
   return render(request, template, context)
 

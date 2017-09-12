@@ -2,57 +2,57 @@
 {% load staticfiles %}
 {% block content %}
 <div class="row">
-	<div class="col-md-12">
-		<div class="box">
-			<div class="box-header with-border">
-				<h3 class="box-title">{{title}}</h3>
-				<span class="pull-right"><a href="#" class="btn btn-primary btn-sm" role="button">Add New</a></span>
-			</div>
-			<!-- /.box-header -->
-			<div class="box-body">
-				<table class="table table-bordered">
-					<tbody>
-						<tr>
-							<th style="width: 10px">SL</th>
-							<th>Name</th>
-							<th>Description</th>
-							<th>Status</th>
-							<th>Create By</th>
-							<th>Create Date</th>
-							<th style="width:120px;text-align:center;">Action</th>
-						</tr>
-						{% for loc in locs %}
-						<tr>
-							<td>{{forloop.counter}}.</td>
-							<td>{{loc.name}}</td>
-							<td>{{loc.description}}</td>
-							<td>{{loc.active}}</td>
-							<td>{{loc.create_by}}</td>
-							<td>{{loc.create_date}}</td>
-							<td align="center">
-								<div class="btn-group">
-									<a href="#" class="btn btn-warning btn-sm" role="button"><i class="fa fa-edit"></i></a>
-									<a href="#" class="btn btn-danger btn-sm" role="button"><i class="fa fa-trash"></i></a>
-								</div>
-							</td>
+  <div class="col-md-12">
+    <div class="box box-info">
+        <div class="box-header with-border">
+          <h3 class="box-title"><span>{{msg}}</span></h3>
+		  <span class="pull-right"><a href="{% url 'loc-form' '' %}" class="btn btn-primary btn-sm" role="button">Add New</a></span>
+        </div>
+        <!-- /.box-header -->
+        <!-- form start -->
+        <form class="form-horizontal" method="POST" action="{% url 'loc-form' loc.id %}">
+		{% csrf_token %}
+          <div class="box-body">
+            <div class="form-group">
+              <label for="" class="col-md-2 control-label">Location Name</label>
+              <div class="col-md-8">
+                <input type="text" name="name" value="{{loc.name}}" class="form-control" placeholder="Location Name">
+              </div>
+            </div>
+            
+            <div class="form-group">
+              <label for="" class="col-md-2 control-label">Location Slug (Unique)</label>
+              <div class="col-md-8">
+                <input type="text" name="slug" value="{{loc.slug}}" class="form-control" placeholder="Location Slug">
+              </div>
+            </div>
 
-						</tr>
-						{% endfor %}
-					</tbody>
-				</table>
+            <div class="form-group">
+              <label for="" class="col-md-2 control-label">Description</label>
+              <div class="col-md-8">
+                <input type="text" name="description" value="{{loc.description}}"  class="form-control" placeholder="Description">
+              </div>
+            </div>
+
+			<div class="form-group">
+			  <div class="col-sm-offset-2 col-md-8">
+				<div class="checkbox">
+				  <label>
+					<input type="checkbox" name="status"> Is Active?
+				  </label>
+				</div>
+			  </div>
 			</div>
-			<!-- /.box-body -->
-			<div class="box-footer clearfix">
-				<ul class="pagination pagination-sm no-margin pull-right">
-					<li><a href="#">«</a></li>
-					<li><a href="#">1</a></li>
-					<li><a href="#">2</a></li>
-					<li><a href="#">3</a></li>
-					<li><a href="#">»</a></li>
-				</ul>
-			</div>
-		</div>
-	  <!-- /.box -->
-	</div>
+            
+          </div>
+          <!-- /.box-body -->
+          <div class="box-footer">
+            <a href="{% url 'job-loc' %}" class="btn btn-default">Back</a>
+            <button type="submit" class="btn btn-info pull-right">Submit</button>
+          </div>
+          <!-- /.box-footer -->
+        </form>
+      </div>
+  </div>
 </div>
 {% endblock content %}
