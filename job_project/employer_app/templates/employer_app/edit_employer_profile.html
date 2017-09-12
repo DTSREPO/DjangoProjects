@@ -5,16 +5,17 @@
   <div class="col-md-12">
     <div class="box box-info">
         <div class="box-header with-border">
-          <h3 class="box-title">Horizontal Form</h3>
+          <h3 class="box-title"></h3>
         </div>
         <!-- /.box-header -->
         <!-- form start -->
-        <form class="form-horizontal">
+        <form class="form-horizontal" method="POST" action="{% url 'upd-profile' 1 %}">
+		{% csrf_token %}
           <div class="box-body">
             <div class="form-group">
               <label for="" class="col-md-2 control-label">Company Name</label>
               <div class="col-md-8">
-                <input type="text" class="form-control" placeholder="Company Name">
+                <input type="text" name="com_name" value="{{emp.company_name}}" class="form-control" placeholder="Company Name">
               </div>
             </div>
             <div class="form-group">
@@ -23,62 +24,15 @@
 				   <div class="row">
 				      <div class="col-md-12">
 				         <div class="row" style="height:120px;border:1px solid #ccc;margin:0;padding:0px ;overflow-y:auto;">
+							{% for industry in industries %}
 				            <div class="col-md-6">
 				                <div class="checkbox">
 				                  <label>
-				                    <input type="checkbox"> Advertising Ageny
+				                    <input type="checkbox" name="industry_type" value="{{industry.id}}"> {{industry.name}}
 				                  </label>
 				                </div>
 				            </div>
-				            <div class="col-md-6">
-				                <div class="checkbox">
-				                  <label>
-				                    <input type="checkbox"> Audit Firms/Tax Consultant
-				                  </label>
-				                </div>
-				            </div>
-				            <div class="col-md-6">
-				                <div class="checkbox">
-				                  <label>
-				                    <input type="checkbox"> Advertising Ageny
-				                  </label>
-				                </div>
-				            </div>
-				            <div class="col-md-6">
-				                <div class="checkbox">
-				                  <label>
-				                    <input type="checkbox"> Advertising Ageny
-				                  </label>
-				                </div>
-				            </div>
-				            <div class="col-md-6">
-				                <div class="checkbox">
-				                  <label>
-				                    <input type="checkbox"> Animal/Plant Breeding
-				                  </label>
-				                </div>
-				            </div>
-				            <div class="col-md-6">
-				                <div class="checkbox">
-				                  <label>
-				                    <input type="checkbox"> Advertising Ageny
-				                  </label>
-				                </div>
-				            </div>
-				            <div class="col-md-6">
-				                <div class="checkbox">
-				                  <label>
-				                    <input type="checkbox"> Audit Firms/Tax Consultant
-				                  </label>
-				                </div>
-				            </div>
-				            <div class="col-md-6">
-				                <div class="checkbox">
-				                  <label>
-				                    <input type="checkbox"> Advertising Ageny
-				                  </label>
-				                </div>
-				            </div>
+							{% endfor %}
 				        </div>
 				        </div>
 				    </div>
@@ -87,35 +41,35 @@
             <div class="form-group">
               <label for="" class="col-md-2 control-label">Company Address</label>
               <div class="col-md-8">
-                <input type="text" class="form-control" placeholder="Company Address">
+                <input type="text" name="com_address" value="{{emp.company_address}}" class="form-control" placeholder="Company Address">
               </div>
             </div>
 
             <div class="form-group">
               <label for="" class="col-md-2 control-label">Billing Address</label>
               <div class="col-md-8">
-                <input type="text" class="form-control" placeholder="Billing Address">
+                <input type="text" name="billing_address" value="{{emp.billing_address}}"  class="form-control" placeholder="Billing Address">
               </div>
             </div>
 
             <div class="form-group">
               <label for="" class="col-md-2 control-label">Contact Phone</label>
               <div class="col-md-8">
-                <input type="text" class="form-control" placeholder="88017XX XXX XXX">
+                <input type="text" name="contact_phone" value="{{emp.contact_phone}}" class="form-control" placeholder="88017XX XXX XXX">
               </div>
             </div>
 
             <div class="form-group">
               <label for="" class="col-md-2 control-label">Email</label>
               <div class="col-md-8">
-                <input type="text" class="form-control" placeholder="xxx@mail.com">
+                <input type="text" name="contact_email" value="{{emp.contact_email}}" class="form-control" placeholder="xxx@mail.com">
               </div>
             </div>
 
             <div class="form-group">
               <label for="" class="col-md-2 control-label">Website</label>
               <div class="col-md-8">
-                <input type="text" class="form-control" placeholder="http://www.xxx.com">
+                <input type="text" name="website" value="{{emp.website}}" class="form-control" placeholder="http://www.xxx.com">
               </div>
             </div>
 

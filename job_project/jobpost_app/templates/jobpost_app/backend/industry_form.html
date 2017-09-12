@@ -1,0 +1,58 @@
+{% extends "jobpost_app/backend/base.html" %}
+{% load staticfiles %}
+{% block content %}
+<div class="row">
+  <div class="col-md-12">
+    <div class="box box-info">
+        <div class="box-header with-border">
+          <h3 class="box-title"><span>{{msg}}</span></h3>
+		  <span class="pull-right"><a href="{% url 'ind-form' '' %}" class="btn btn-primary btn-sm" role="button">Add New</a></span>
+        </div>
+        <!-- /.box-header -->
+        <!-- form start -->
+        <form class="form-horizontal" method="POST" action="{% url 'ind-form' ind.id %}">
+		{% csrf_token %}
+          <div class="box-body">
+            <div class="form-group">
+              <label for="" class="col-md-2 control-label">Industry Name</label>
+              <div class="col-md-8">
+                <input type="text" name="name" value="{{ind.name}}" class="form-control" placeholder="Industry Name">
+              </div>
+            </div>
+            
+            <div class="form-group">
+              <label for="" class="col-md-2 control-label">Industry Slug (Unique)</label>
+              <div class="col-md-8">
+                <input type="text" name="slug" value="{{ind.slug}}" class="form-control" placeholder="Industry Slug">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="" class="col-md-2 control-label">Description</label>
+              <div class="col-md-8">
+                <input type="text" name="description" value="{{ind.description}}"  class="form-control" placeholder="Description">
+              </div>
+            </div>
+
+			<div class="form-group">
+			  <div class="col-sm-offset-2 col-md-8">
+				<div class="checkbox">
+				  <label>
+					<input type="checkbox" name="status"> Is Active?
+				  </label>
+				</div>
+			  </div>
+			</div>
+            
+          </div>
+          <!-- /.box-body -->
+          <div class="box-footer">
+            <a href="{% url 'ind-list' %}" class="btn btn-default">Back</a>
+            <button type="submit" class="btn btn-info pull-right">Submit</button>
+          </div>
+          <!-- /.box-footer -->
+        </form>
+      </div>
+  </div>
+</div>
+{% endblock content %}

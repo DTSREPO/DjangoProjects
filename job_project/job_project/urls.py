@@ -18,7 +18,6 @@ from django.conf.urls import url, include
 
 urlpatterns = [
     url(r'^', include('jobpost_app.urls')),
-    url(r'^seeker/login/', include('jobseeker_app.urls')),
     url(r'^employer/', include('employer_app.urls')),
     #url(r'^admin/', include('admin_app.urls')),
 ]

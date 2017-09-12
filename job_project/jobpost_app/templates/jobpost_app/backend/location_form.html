@@ -21,14 +21,14 @@
 							<th>Create Date</th>
 							<th style="width:120px;text-align:center;">Action</th>
 						</tr>
-						{% for cat in cats %}
+						{% for loc in locs %}
 						<tr>
 							<td>{{forloop.counter}}.</td>
-							<td>{{cat.name}}</td>
-							<td>{{cat.description}}</td>
-							<td>{{cat.active}}</td>
-							<td>{{cat.create_by}}</td>
-							<td>{{cat.create_date}}</td>
+							<td>{{loc.name}}</td>
+							<td>{{loc.description}}</td>
+							<td>{{loc.active}}</td>
+							<td>{{loc.create_by}}</td>
+							<td>{{loc.create_date}}</td>
 							<td align="center">
 								<div class="btn-group">
 									<a href="#" class="btn btn-warning btn-sm" role="button"><i class="fa fa-edit"></i></a>
