@@ -161,102 +161,19 @@
 	</div>
 
 	<div class="row">
+		{% for i in ind %}
 		<div class="col-md-4" style="margin-bottom:10px;">
 			<a href="#">
 				<div class="category-list-icon">
-					<div class="cat-jobs-icon pull-left MediumTurquoise">
+					<div class="cat-jobs-icon pull-left {% cycle 'MediumSeaGreen' 'MediumTurquoise' 'YellowGreen' 'MediumPurple' 'MediumSpringGreen' 'MediumSlateBlue' %}">
 						<span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span>
 					</div>
-					<span class="pull-left" style="margin: 4px 15px;">Account & Finance Jobs</span>
+					<span class="pull-left" style="margin: 4px 15px;">{{i.name}}</span>
 				</div>
 			</a>
 		</div>
-		<div class="col-md-4" style="margin-bottom:10px;">
-			<a href="#">
-				<div class="category-list-icon">
-					<div class="cat-jobs-icon pull-left MediumTurquoise">
-						<span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span>
-					</div>
-					<span class="pull-left" style="margin: 4px 15px;">NGO / Developments</span>
-				</div>
-			</a>
-		</div>
-		<div class="col-md-4" style="margin-bottom:10px;">
-			<a href="#">
-				<div class="category-list-icon">
-					<div class="cat-jobs-icon pull-left MediumTurquoise">
-						<span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span>
-					</div>
-					<span class="pull-left" style="margin: 4px 15px;">Driving & Motor Technician</span>
-				</div>
-			</a>
-		</div>
+		{% endfor %}
 		
-		<div class="col-md-4" style="margin-bottom:10px;">
-			<a href="#">
-				<div class="category-list-icon">
-					<div class="cat-jobs-icon pull-left MediumSeaGreen">
-						<span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span>
-					</div>
-					<span class="pull-left" style="margin: 4px 15px;">Account & Finance Jobs</span>
-				</div>
-			</a>
-		</div>
-		
-		<div class="col-md-4" style="margin-bottom:10px;">
-			<a href="#">
-				<div class="category-list-icon">
-					<div class="cat-jobs-icon pull-left MediumSeaGreen">
-						<span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span>
-					</div>
-					<span class="pull-left" style="margin: 4px 15px;">Driving & Motor Technician</span>
-				</div>
-			</a>
-		</div>
-		
-		<div class="col-md-4" style="margin-bottom:10px;">
-			<a href="#">
-				<div class="category-list-icon">
-					<div class="cat-jobs-icon pull-left MediumSeaGreen">
-						<span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span>
-					</div>
-					<span class="pull-left" style="margin: 4px 15px;">NGO / Developments</span>
-				</div>
-			</a>
-		</div>
-		
-		<div class="col-md-4" style="margin-bottom:10px;">
-			<a href="#">
-				<div class="category-list-icon">
-					<div class="cat-jobs-icon pull-left YellowGreen">
-						<span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span>
-					</div>
-					<span class="pull-left" style="margin: 4px 15px;">Account & Finance Jobs</span>
-				</div>
-			</a>
-		</div>
-		
-		<div class="col-md-4" style="margin-bottom:10px;">
-			<a href="#">
-				<div class="category-list-icon">
-					<div class="cat-jobs-icon pull-left YellowGreen">
-						<span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span>
-					</div>
-					<span class="pull-left" style="margin: 4px 15px;">Driving & Motor Technician</span>
-				</div>
-			</a>
-		</div>
-		
-		<div class="col-md-4" style="margin-bottom:10px;">
-			<a href="#">
-				<div class="category-list-icon">
-					<div class="cat-jobs-icon pull-left YellowGreen">
-						<span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span>
-					</div>
-					<span class="pull-left" style="margin: 4px 15px;">NGO / Developments</span>
-				</div>
-			</a>
-		</div>
 	</div>
 
 
