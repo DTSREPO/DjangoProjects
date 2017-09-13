@@ -60,7 +60,7 @@ desired effect
   <header class="main-header">
 
     <!-- Logo -->
-    <a href="{% url 'dashboard' %}" class="logo">
+    <a href="{% url 'employer_app:dashboard' %}" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini">Employer Admin</span>
       <!-- logo for regular state and mobile devices -->
@@ -112,9 +112,9 @@ desired effect
         <li class="header">Quick Access</li>
         <!-- Optionally, you can add icons to the links -->
         <li class="active">
-			     <a href="{% url 'dashboard' %}"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a>
+			     <a href="{% url 'employer_app:dashboard' %}"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a>
 		    </li>
-        <li><a href="{% url 'upd-profile' 1 %}"><i class="fa fa-user"></i> <span>View Profile</span></a></li>
+        <li><a href="{% url 'employer_app:upd-profile' 1 %}"><i class="fa fa-user"></i> <span>View Profile</span></a></li>
         <li class="treeview">
           <a href="#"><i class="fa fa-link"></i> <span>Multilevel</span>
             <span class="pull-right-container">

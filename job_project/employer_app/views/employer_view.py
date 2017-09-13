@@ -4,18 +4,11 @@ from employer_app import models
 #from jobpost_app.models.industry import Industry
 
 # Create your views here.
-'''
-def employer_dashboard_view(request):
-    template = 'employer_app/index.html'
-    context = {'title': 'Employer'}
-    return render(request, template, context)
 
-
-def emp_profile_update_view(request):
-  template = 'employer_app/edit_employer_profile.html'
-  context = {'title': 'Edit Employer Profile'}
-  return render(request, template, context)
-'''
+class EmployerLoginReg(View):
+    template='employer_app/employer_login_reg.html'
+    def get(self, request, emp_id=None):
+      return render(request, self.template, context={'title':'Employer Login/Registration'})
 
 class EmployerCrud(View):
 

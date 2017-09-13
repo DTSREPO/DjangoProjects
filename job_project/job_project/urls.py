@@ -17,7 +17,8 @@ from django.conf.urls import url, include
 #from django.contrib import admin
 
 urlpatterns = [
-    url(r'^', include('jobpost_app.urls')),
-    url(r'^employer/', include('employer_app.urls')),
+    url(r'^', include('jobpost_app.urls', namespace='jobpost_app')),
+    url(r'^employer/', include('employer_app.urls', namespace='employer_app')),
+    url(r'^seeker/', include('jobseeker_app.urls', namespace='seeker_app')),
     #url(r'^admin/', include('admin_app.urls')),
 ]

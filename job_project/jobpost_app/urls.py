@@ -1,3 +1,8 @@
+
+
+
+
+
 from django.conf.urls import include, url
 from jobpost_app.views.index_view import (index_view)
 from jobpost_app.views.backend_index_view import (backend_index_view)

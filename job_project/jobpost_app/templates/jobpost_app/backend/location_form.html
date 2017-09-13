@@ -6,11 +6,11 @@
     <div class="box box-info">
         <div class="box-header with-border">
           <h3 class="box-title"><span>{{msg}}</span></h3>
-		  <span class="pull-right"><a href="{% url 'loc-form' '' %}" class="btn btn-primary btn-sm" role="button">Add New</a></span>
+		  <span class="pull-right"><a href="{% url 'jobpost_app:loc-form' '' %}" class="btn btn-primary btn-sm" role="button">Add New</a></span>
         </div>
         <!-- /.box-header -->
         <!-- form start -->
-        <form class="form-horizontal" method="POST" action="{% url 'loc-form' loc.id %}">
+        <form class="form-horizontal" method="POST" action="{% url 'jobpost_app:loc-form' loc.id %}">
 		{% csrf_token %}
           <div class="box-body">
             <div class="form-group">
@@ -47,7 +47,7 @@
           </div>
           <!-- /.box-body -->
           <div class="box-footer">
-            <a href="{% url 'job-loc' %}" class="btn btn-default">Back</a>
+            <a href="{% url 'jobpost_app:job-loc' %}" class="btn btn-default">Back</a>
             <button type="submit" class="btn btn-info pull-right">Submit</button>
           </div>
           <!-- /.box-footer -->
