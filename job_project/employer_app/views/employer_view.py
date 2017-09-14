@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.views import View
 from employer_app import models
-#from jobpost_app.models.industry import Industry
+from jobpost_app import models
 
 # Create your views here.
 
@@ -13,12 +13,12 @@ class EmployerLoginReg(View):
 class EmployerCrud(View):
 
   template = 'employer_app/edit_employer_profile.html'
-  #industries = models.Industry.objects.all()
+  industries = models.Industry.objects.all()
   
   def get(self, request, emp_id=None):
     emp=models.Employer.objects.get(pk=1)
-    #context = {'title': 'Edit Employer Profile','emp':emp, 'industries':self.industries}
-    context = {'title': 'Edit Employer Profile','emp':emp}
+    context = {'title': 'Edit Employer Profile','emp':emp, 'industries':self.industries}
+    #context = {'title': 'Edit Employer Profile','emp':emp}
     return render(request, self.template, context)
     
   def post(self, request, emp_id=None):

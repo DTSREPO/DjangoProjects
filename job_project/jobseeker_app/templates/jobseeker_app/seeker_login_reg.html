@@ -10,16 +10,20 @@
 
 {% block content %}
 	<div style="min-height: 350px; padding:30px; margin: 0 0 30px 0; background: #ffffff; overflow: hidden;">
-		<form>
+		{% if msg %}
+		<div style="color:green; margin:0px 0px 30px 15px;">{{msg}}</div>
+		{% endif %}
+		<form method="POST" action="{% url 'seeker_app:seeker-login' %}">
+			{% csrf_token %}
 			<div class="col-md-12">
 				<div class="row">
 					<div class="col-md-6 form-group">
 						<label>First Name</label>
-						<input type="text" placeholder="Enter First Name Here.." class="form-control">
+						<input type="text" name="first_name" placeholder="Enter First Name Here.." class="form-control">
 					</div>
 					<div class="col-md-6 form-group">
 						<label>Last Name</label>
-						<input type="text" placeholder="Enter Last Name Here.." class="form-control">
+						<input type="text" name="last_name" placeholder="Enter Last Name Here.." class="form-control">
 					</div>
 				</div>
 				<div class="row">
@@ -30,46 +34,50 @@
 							<option value="1">Male</option>
 							<option value="2">Female</option>
 							<option value="3">Others</option>
-							
 						</select>
 					</div>
 					<div class="col-md-6 form-group">
 						<label>Mobile</label>
-						<input type="text" placeholder="Mobile no." class="form-control">
+						<input type="text" name="mobile" placeholder="Mobile no." class="form-control">
 					</div>
 				</div>
 				<div class="row">
 					<div class="col-md-6 form-group">
 						<label>Email</label>
-						<input type="email" placeholder="abc@mail.com" class="form-control">
+						<input type="email" name="email" placeholder="abc@mail.com" class="form-control">
 					</div>
 					<div class="col-md-6 form-group">
 						<label>Job Category</label>
-						<input type="text" placeholder="Enter Last Name Here.." class="form-control">
+						<select class="form-control" name="industry">
+							<option value="">-- Select Industry --</option>
+							<option value="1">IT/Telecommunication</option>
+							<option value="2">Agriculture</option>
+							<option value="3">BPO/Data Entry</option>
+						</select>
 					</div>
 				</div>
 				<div class="row">
 					<div class="col-md-4 form-group">
 						<label>User Name</label>
-						<input type="text" placeholder="User Name" class="form-control">
-					</div>	
+						<input type="text" name="user_name" placeholder="User Name" class="form-control">
+					</div>
 					<div class="col-md-4 form-group">
 						<label>Password</label>
-						<input type="password" placeholder="Password" class="form-control">
+						<input type="password" name="user_pwd" placeholder="Password" class="form-control">
 					</div>	
 					<div class="col-md-4 form-group">
 						<label>Confirm Password</label>
-						<input type="password" placeholder="Confirm Password" class="form-control">
+						<input type="password" name="re-pwd" placeholder="Confirm Password" class="form-control">
 					</div>		
 				</div>
 				<div class="row">
 					<div class="col-md-12 form-group">
 						<div class="checkbox">
-							<label><input type="checkbox" value="">I agree with the <a href="#"> Terms and conditions..</a></label>
+							<label><input type="checkbox" name="agree" value="">I agree with the <a href="#"> Terms and conditions..</a></label>
 						</div>
 					</div>
 				</div>
-				<button type="button" class="btn btn-lg btn-info">Submit</button>					
+				<button type="submit" class="btn btn-lg btn-info">Submit</button>					
 			</div>
 		</form>	
 	</div>

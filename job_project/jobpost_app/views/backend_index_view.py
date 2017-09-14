@@ -1,6 +1,5 @@
 from django.shortcuts import render
 from jobpost_app.models import Location
-#from django.http import HttpResponse
 
 
 # Create your views here.

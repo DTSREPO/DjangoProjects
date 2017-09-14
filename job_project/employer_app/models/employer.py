@@ -1,7 +1,6 @@
 from django.db import models
 
 
-
 # Create your models here.
 class Employer(models.Model):
   #Account Information
@@ -11,7 +10,7 @@ class Employer(models.Model):
   #Company Details
   company_name = models.CharField(max_length=200, default="", null = False)
   contact_person = models.CharField(max_length=200, default="", null = True)
-  industry_type	= models.ManyToManyField("jobpost_app.Industry", null = True) #Foreign Key
+  industry_type	= models.ManyToManyField("jobpost_app.Industry") #Foreign Key
   country = None
   city = None
   company_address = models.CharField(max_length=300, default="", null = False)
