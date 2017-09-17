@@ -1,0 +1,110 @@
+{% extends "employer_app/base.html" %}
+{% load staticfiles %}
+{% block content %}
+<div class="row">
+  <div class="col-md-12">
+    <div class="box box-info">
+        <div class="box-header with-border">
+          <h3 class="box-title">{{title}}</h3>
+        </div>
+        <!-- /.box-header -->
+        <!-- form start -->
+        <form class="form-horizontal" method="POST" action="{% url 'employer_app:upd-profile' 1 %}">
+		{% csrf_token %}
+          <div class="box-body">
+            <div class="form-group">
+              <label for="" class="col-md-2 control-label">Company Name</label>
+              <div class="col-md-8">
+                <input type="text" name="com_name" value="{{emp.company_name}}" class="form-control" placeholder="Company Name" READONLY>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-md-2 control-label">Category</label>
+				 <div class="col-md-8">
+				   <div class="row">
+						<div class="col-md-12">
+							<select class="form-control">
+								<option vlaue="">--- Select Category ---</option>
+								{% for industry in industries %}
+									<option value="{{industry.id}}">{{industry.name}}</option>
+								{% endfor %}
+							</select>
+						</div>
+				    </div>
+				</div>
+            </div>
+			
+			<div class="form-group">
+              <label class="col-md-2 control-label">Industry Type</label>
+				 <div class="col-md-8">
+				   <div class="row">
+						<div class="col-md-12">
+							<select class="form-control">
+								<option vlaue="">--- Select Industry ---</option>
+								{% for industry in industries %}
+									<option value="{{industry.id}}">{{industry.name}}</option>
+								{% endfor %}
+							</select>
+						</div>
+				    </div>
+				</div>
+            </div>
+			
+            <div class="form-group">
+              <label for="" class="col-md-2 control-label">Company Address</label>
+              <div class="col-md-8">
+                <input type="text" name="com_address" value="{{emp.company_address}}" class="form-control" placeholder="Company Address">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="" class="col-md-2 control-label">Billing Address</label>
+              <div class="col-md-8">
+                <input type="text" name="billing_address" value="{{emp.billing_address}}"  class="form-control" placeholder="Billing Address">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="" class="col-md-2 control-label">Contact Phone</label>
+              <div class="col-md-8">
+                <input type="text" name="contact_phone" value="{{emp.contact_phone}}" class="form-control" placeholder="88017XX XXX XXX">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="" class="col-md-2 control-label">Email</label>
+              <div class="col-md-8">
+                <input type="text" name="contact_email" value="{{emp.contact_email}}" class="form-control" placeholder="xxx@mail.com">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="" class="col-md-2 control-label">Website</label>
+              <div class="col-md-8">
+                <input type="text" name="website" value="{{emp.website}}" class="form-control" placeholder="http://www.xxx.com">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="" class="col-md-2 control-label">Chose Logo</label>
+              <div class="col-md-8">
+                <input type="file" id="exampleInputFile">
+                <p class="help-block">
+                	File must be in JPEG(.jpg or .jpeg) or GIF(.gif) or png format. 
+					The height and width of the Applicant Photo must be equal(300x300). Max size 100KB
+				</p>
+              </div>
+            </div>
+            
+          </div>
+          <!-- /.box-body -->
+          <div class="box-footer">
+            <button type="submit" class="btn btn-default">Back</button>
+            <button type="submit" class="btn btn-info pull-right">Update</button>
+          </div>
+          <!-- /.box-footer -->
+        </form>
+      </div>
+  </div>
+</div>
+{% endblock content %}

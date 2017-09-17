@@ -26,7 +26,7 @@ class EmployerCrud(View):
     #user_pass =
     company_name = request.POST['com_name']
     #contact_person = request.POST['']
-    #industry_type	= 
+    industry_type = request.POST.getlist('industry_type')
     #country = 
     #city = 
     company_address = request.POST['com_address']
@@ -34,6 +34,13 @@ class EmployerCrud(View):
     contact_phone = request.POST['contact_phone']
     contact_email = request.POST['contact_email']
     website = request.POST['website']
+	
+    industries =[]
+    for ind_id in industry_type:
+      inds=JobModels.Industry.objects.get(pk=ind_id)
+      industries.append(inds)
+		
+	
 	
     if emp_id:
       emp=EmpModels.Employer.objects.get(pk=emp_id)
@@ -43,6 +50,7 @@ class EmployerCrud(View):
       emp.contact_phone = contact_phone
       emp.contact_email = contact_email
       emp.website = website
+      emp.industry_type = industries
       emp.save()
     else:
       emp=EmpModels.Employer(
@@ -54,6 +62,20 @@ class EmployerCrud(View):
 	    website = website
 	  )
       emp.save()
+      emp.industry_type.add(*industries)
 	  
-    context={'title': 'Edit Employer Profile','emp':emp}
+    context={'title': 'Edit Employer Profile','emp':emp, 'industries':self.industries}
     return render(request, self.template, context)
+
+	
+class JobPost(View):
+    template = 'employer_app/job_post_form.html'
+    industries = JobModels.Industry.objects.all()
+	
+    def get(self, request, job_id=None):
+      return render(request, self.template, {'title':'Create or Update Job Post','industries':self.industries})
+	
+	
+	
+	
+	
