@@ -17,10 +17,10 @@ class LocationCrud(View):
   def get(self, request, loc_id=None):
     if loc_id:
       loc=Location.objects.get(pk=loc_id)
-      context={'loc':loc}
+      context={'title':'Job Location Form', 'loc':loc}
       return render(request, self.template, context)
     else:
-      return render(request, self.template)
+      return render(request, self.template, {'title':'Job Location Form'})
 	
   def post(self, request, loc_id=None):
     name=request.POST.get('name','')
@@ -45,5 +45,5 @@ class LocationCrud(View):
 	  )
       loc.save()
       msg='Data Inserted Successfully'
-    context={'loc':loc, 'msg':msg}
+    context={'title':'Job Location Form', 'loc':loc, 'msg':msg}
     return render(request, self.template, context)

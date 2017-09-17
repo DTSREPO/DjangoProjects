@@ -16,10 +16,10 @@ class IndustryCrud(View):
   def get(self, request, ind_id=None):
     if ind_id:
       ind=Industry.objects.get(pk=ind_id)
-      context={'ind':ind}
+      context={'title':'Industry Form', 'ind':ind}
       return render(request, self.template, context)
     else:
-      return render(request, self.template)
+      return render(request, self.template, {'title':'Industry Form'})
 	
   def post(self, request, ind_id=None):
     name=request.POST.get('name','')
