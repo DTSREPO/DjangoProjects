@@ -15,37 +15,37 @@
             <div class="form-group">
               <label for="" class="col-md-3 control-label">Company Name</label>
               <div class="col-md-7">
-                <input type="text" name="com_name" value="{{emp.company_name}}" class="form-control" placeholder="Company Name" READONLY>
+                <input type="text" name="com-name" value="{{emp.company_name}}" class="form-control" placeholder="Company Name" READONLY>
               </div>
             </div>
             <div class="form-group">
               <label class="col-md-3 control-label">Category</label>
-      				 <div class="col-md-7">
-      							<select class="form-control">
-      								<option vlaue="">--- Select Category ---</option>
-      								{% for industry in industries %}
-      									<option value="{{industry.id}}">{{industry.name}}</option>
-      								{% endfor %}
-      							</select>
+      				<div class="col-md-7">
+						<select name="category" class="form-control">
+							<option vlaue="">--- Select Category ---</option>
+							{% for category in categories %}
+								<option value="{{category.id}}">{{category.name}}</option>
+							{% endfor %}
+						</select>
       				</div>
             </div>
 			
 			<div class="form-group">
               <label class="col-md-3 control-label">Industry Type</label>
-				 <div class="col-md-7">
-							<select class="form-control">
-								<option vlaue="">--- Select Industry ---</option>
-								{% for industry in industries %}
-									<option value="{{industry.id}}">{{industry.name}}</option>
-								{% endfor %}
-							</select>
+				<div class="col-md-7">
+					<select name="industry" class="form-control">
+						<option vlaue="">--- Select Industry ---</option>
+						{% for industry in industries %}
+							<option value="{{industry.id}}">{{industry.name}}</option>
+						{% endfor %}
+					</select>
 				</div>
             </div>
 			
             <div class="form-group">
               <label for="" class="col-md-3 control-label">Job Title</label>
               <div class="col-md-7">
-                <input type="text" name="job_title" value="" class="form-control" placeholder="Job Title">
+                <input type="text" name="job-title" value="" class="form-control" placeholder="Job Title">
               </div>
             </div>
 
@@ -57,32 +57,19 @@
             </div>
 
             <div class="form-group">
-              <label class="col-md-3 control-label">How do you want to receive CV (Radio)</label>
-               <div class="col-md-7">
-                    <select class="form-control">
-                      <option vlaue="">--- Select One ---</option>
-                      <option value="">Online CV/Resume  [CVs in JagoJobs format will be available in your Employer's Panel. Also you can see applicant's attached CV if available.]</option>
-                      <option value="">Email Attachment [Applicants can send their CV as an attachment in your given Email address.] </option>
-                      <option value="">Hard Copy CV  [Applicants can send hard copy of their CV in your corporate address.]</option>
-                      <option value="">Walk-in Interview</option>
-                    </select>
-              </div>
-            </div>
-
-            <div class="form-group">
               <label for="" class="col-md-3 control-label">Applicant should enclose Photograph with CV ?</label>
               <div class="col-md-7">
                 <label class="radio-inline">
-                <input type="radio" id="attach_photo" name="attach_photo" value="1" checked=""> Yes</label>
+                <input type="radio" name="attach-photo" value="1" checked=""> Yes</label>
                 <label class="radio-inline">
-                <input type="radio" id="attach_photo" name="attach_photo" value="0"> No</label>
+                <input type="radio" name="attach-photo" value="0"> No</label>
               </div>
             </div>
 
             <div class="form-group">
               <label for="" class="col-md-3 control-label">Apply Instruction(s)</label>
               <div class="col-md-7">
-                  <textarea rows="4" cols="98" class="form-control" placeholder="Apply Instructions"></textarea>
+                  <textarea rows="4" cols="98" name="apply-ins" class="form-control" placeholder="Apply Instructions"></textarea>
               </div>
             </div>
 
@@ -97,22 +84,21 @@
               <div class="col-md-3">
                   <div class="input-group">
                     <div class="input-group-addon">From</div>
-                    <input type="number" class="form-control">
+                    <input type="number" name="age-frm" class="form-control">
                   </div>
               </div>
               <div class="col-md-3">
                   <div class="input-group">
                     <div class="input-group-addon">To</div>
-                    <input type="number" class="form-control">
+                    <input type="number" name="age-to" class="form-control">
                   </div>
               </div>
             </div>
 
-
             <div class="form-group">
               <label class="col-md-3 control-label">Gender</label>
                <div class="col-md-7">
-                    <select class="form-control">
+                    <select name="gender" class="form-control">
                       <option vlaue="">--- Select One ---</option>
                       <option value="1">Male</option>
                       <option value="2">Female</option>
@@ -120,53 +106,65 @@
                     </select>
               </div>
             </div>
-
+			
             <div class="form-group">
               <label class="col-md-3 control-label">Job Type</label>
                <div class="col-md-7">
-                    <select class="form-control">
-                      <option vlaue="">--- Select One ---</option>
-                      <option value="1">Full Time</option>
-                      <option value="2">Part Time</option>
-                      <option value="3">Contractual</option>
-                      <option value="4">Internship</option>
-                    </select>
+					<label class="checkbox-inline">
+						<input name="job-type[]" value="1" type="checkbox"> Full Time
+					</label>
+					<label class="checkbox-inline">
+						<input name="job-type[]" value="2" type="checkbox"> Part Time
+					</label>
+					<label class="checkbox-inline">
+						<input name="job-type[]" value="3" type="checkbox"> Contractual
+					</label>
+					
+					<label class="checkbox-inline">
+						<input name="job-type[]" value="4" type="checkbox"> Internship
+					</label>
+
               </div>
             </div>
+			
             <div class="form-group">
               <label class="col-md-3 control-label">Job Level</label>
                <div class="col-md-7">
-                    <select class="form-control">
-                      <option vlaue="">--- Select One ---</option>
-                      <option value="1">Entry Level</option>
-                      <option value="2">Mid Level</option>
-                      <option value="3">Top Level</option>
-                    </select>
+					<label class="checkbox-inline">
+						<input name="job-level[]" value="1" type="checkbox"> Entry Level
+					</label>
+					<label class="checkbox-inline">
+						<input name="job-level[]" value="2" type="checkbox"> Mid Level
+					</label>
+					<label class="checkbox-inline">
+						<input name="job-level[]" value="3" type="checkbox"> Top Level
+					</label>
+
               </div>
             </div>
             <div class="form-group">
               <label for="" class="col-md-3 control-label">Educational Qualification</label>
               <div class="col-md-7">
-                  <textarea rows="4" cols="98" class="form-control" placeholder="Educational Qualification"></textarea>
+                  <textarea rows="4" cols="98" name="edu-qlf" class="form-control" placeholder="Educational Qualification"></textarea>
               </div>
             </div>
             <div class="form-group">
               <label for="" class="col-md-3 control-label">Job Context</label>
               <div class="col-md-7">
-                  <textarea rows="4" cols="98" class="form-control" placeholder="Job Context"></textarea>
+                  <textarea rows="4" cols="98" name="job-context" class="form-control" placeholder="Job Context"></textarea>
               </div>
             </div>
             <div class="form-group">
               <label for="" class="col-md-3 control-label">Job Description/Responsibility</label>
               <div class="col-md-7">
-                  <textarea rows="4" cols="98" class="form-control" placeholder="Job Description/Responsibility"></textarea>
+                  <textarea rows="4" cols="98" name="job-resp" class="form-control" placeholder="Job Description/Responsibility"></textarea>
               </div>
             </div>
 
             <div class="form-group">
               <label for="" class="col-md-3 control-label">Additional Job Requirements</label>
               <div class="col-md-7">
-                  <textarea rows="4" cols="98" class="form-control" placeholder="Additional Job Requirements"></textarea>
+                  <textarea rows="4" cols="98" name="adn-req" class="form-control" placeholder="Additional Job Requirements"></textarea>
               </div>
             </div>
 
@@ -174,15 +172,15 @@
               <label for="" class="col-md-3 control-label"></label>
               <div class="col-md-7">
                 <label class="radio-inline">
-                    <input name="experience_required" id="show-experience" value="0" checked="" type="radio">
+                    <input name="experience_required" id="show-experience" value="1" type="radio">
                     Experience Required
                 </label>
                 <label class="radio-inline">
-                    <input name="experience_required" id="no-experience" value="0" type="radio">
+                    <input name="experience_required" id="no-experience" value="2" type="radio">
                     No Experience Required
                 </label>
                 <label class="radio-inline">
-                    <input name="experience_required" id="exp-donot-mention" value="2" type="radio">
+                    <input name="experience_required" id="exp-donot-mention" value="3" type="radio">
                     Do Not Mention
                 </label>
               </div>
@@ -192,13 +190,13 @@
               <div class="col-md-3">
                   <div class="input-group">
                     <div class="input-group-addon">Min</div>
-                    <input type="number" class="form-control">
+                    <input type="number" name="min-exp" class="form-control">
                   </div>
               </div>
               <div class="col-md-3">
                   <div class="input-group">
                     <div class="input-group-addon">Max</div>
-                    <input type="number" class="form-control">
+                    <input type="number" name="max-exp" class="form-control">
                   </div>
               </div>
             </div>
@@ -206,13 +204,13 @@
             <div class="form-group">
               <label class="col-md-3 control-label">Job Locations</label>
                <div class="col-md-7">
-                    <select class="form-control">
-                      <option vlaue="">--- Select One ---</option>
-                      <option value="1">Full Time</option>
-                      <option value="2">Part Time</option>
-                      <option value="3">Contractual</option>
-                      <option value="4">Internship</option>
-                    </select>
+					<select name="location" class="form-control">
+						<option vlaue="">--- Select Locations ---</option>
+						{% for location in locations %}
+							<option value="{{location.id}}">{{location.name}}</option>
+						{% endfor %}
+					</select>
+
               </div>
             </div>
 
@@ -220,15 +218,15 @@
               <label for="" class="col-md-3 control-label">Salary Range</label>
               <div class="col-md-7">
                 <label class="radio-inline">
-                    <input name="experience_required" id="show-experience" value="0" checked="" type="radio">
+                    <input name="exp-req" value="1" checked="" type="radio">
                     Don't want to mention
                 </label>
                 <label class="radio-inline">
-                    <input name="experience_required" id="no-experience" value="0" type="radio">
+                    <input name="exp-req" value="2" type="radio">
                     Negotiable
                 </label>
                 <label class="radio-inline">
-                    <input name="experience_required" id="exp-donot-mention" value="2" type="radio">
+                    <input name="exp-req" value="3" type="radio">
                     Want to display the following range
                 </label>
               </div>
@@ -239,13 +237,13 @@
               <div class="col-md-3">
                   <div class="input-group">
                     <div class="input-group-addon">Min</div>
-                    <input type="number" class="form-control">
+                    <input type="number" name="min-sal" class="form-control">
                   </div>
               </div>
               <div class="col-md-3">
                   <div class="input-group">
                     <div class="input-group-addon">Max</div>
-                    <input type="number" class="form-control">
+                    <input type="number" name="max-sal" class="form-control">
                   </div>
               </div>
             </div>
@@ -253,7 +251,7 @@
             <div class="form-group">
               <label for="" class="col-md-3 control-label">Other Benefits</label>
               <div class="col-md-7">
-                  <textarea rows="4" cols="98" class="form-control" placeholder="Other Benefits"></textarea>
+                  <textarea rows="4" cols="98" name="other-benifits" class="form-control" placeholder="Other Benefits"></textarea>
               </div>
             </div>
 
@@ -262,7 +260,7 @@
               <div class="col-md-7">
                  <div class="checkbox">
                       <label>
-                        <input type="checkbox"> Yes
+                        <input type="checkbox" name="excl-job"> Yes
                       </label>
                     </div>
               </div>

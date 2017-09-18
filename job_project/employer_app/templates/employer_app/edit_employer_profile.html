@@ -13,69 +13,77 @@
 		{% csrf_token %}
           <div class="box-body">
             <div class="form-group">
-              <label for="" class="col-md-2 control-label">Company Name</label>
-              <div class="col-md-8">
+              <label for="" class="col-md-3 control-label">Company Name</label>
+              <div class="col-md-7">
                 <input type="text" name="com_name" value="{{emp.company_name}}" class="form-control" placeholder="Company Name">
               </div>
             </div>
             <div class="form-group">
-              <label class="col-md-2 control-label">Industry Type</label>
-				 <div class="col-md-8">
+              <label class="col-md-3 control-label">Industry Type</label>
+				 <div class="col-md-7">
 				   <div class="row">
 				      <div class="col-md-12">
 				         <div class="row" style="height:120px;border:1px solid #ccc;margin:0;padding:0px ;overflow-y:auto;">
+						 {% with inds_type=emp.industry_type.all %}
 							{% for industry in industries %}
 				            <div class="col-md-6">
 				                <div class="checkbox">
 				                  <label>
-				                    <input type="checkbox" name="industry_type" value="{{industry.id}}"> {{industry.name}}
+				                    <input type="checkbox" name="industry_type" value="{{industry.id}}"
+									    {% for c in inds_type %}
+											{% if c.id == industry.id %}
+												checked
+											{% endif %}
+										{% endfor %}
+									> {{industry.name}}
 				                  </label>
 				                </div>
 				            </div>
 							{% endfor %}
+						 {% endwith %}
 				        </div>
 				        </div>
 				    </div>
 				</div>
             </div>
             <div class="form-group">
-              <label for="" class="col-md-2 control-label">Company Address</label>
-              <div class="col-md-8">
+              <label for="" class="col-md-3 control-label">Company Address</label>
+              <div class="col-md-7">
                 <input type="text" name="com_address" value="{{emp.company_address}}" class="form-control" placeholder="Company Address">
               </div>
             </div>
 
             <div class="form-group">
-              <label for="" class="col-md-2 control-label">Billing Address</label>
-              <div class="col-md-8">
+              <label for="" class="col-md-3 control-label">Billing Address</label>
+              <div class="col-md-7">
                 <input type="text" name="billing_address" value="{{emp.billing_address}}"  class="form-control" placeholder="Billing Address">
               </div>
             </div>
 
             <div class="form-group">
-              <label for="" class="col-md-2 control-label">Contact Phone</label>
-              <div class="col-md-8">
+              <label for="" class="col-md-3 control-label">Contact Phone</label>
+              <div class="col-md-7">
                 <input type="text" name="contact_phone" value="{{emp.contact_phone}}" class="form-control" placeholder="88017XX XXX XXX">
               </div>
             </div>
 
             <div class="form-group">
-              <label for="" class="col-md-2 control-label">Email</label>
-              <div class="col-md-8">
+              <label for="" class="col-md-3 control-label">Email</label>
+              <div class="col-md-7">
                 <input type="text" name="contact_email" value="{{emp.contact_email}}" class="form-control" placeholder="xxx@mail.com">
               </div>
             </div>
 
             <div class="form-group">
-              <label for="" class="col-md-2 control-label">Website</label>
-              <div class="col-md-8">
+              <label for="" class="col-md-3 control-label">Website</label>
+              <div class="col-md-7">
                 <input type="text" name="website" value="{{emp.website}}" class="form-control" placeholder="http://www.xxx.com">
               </div>
             </div>
 
             <div class="form-group">
-              <label for="" class="col-md-2 control-label">Chose Logo</label>
-              <div class="col-md-8">
+              <label for="" class="col-md-3 control-label">Chose Logo</label>
+              <div class="col-md-7">
                 <input type="file" id="exampleInputFile">
                 <p class="help-block">
                 	File must be in JPEG(.jpg or .jpeg) or GIF(.gif) or png format. 
