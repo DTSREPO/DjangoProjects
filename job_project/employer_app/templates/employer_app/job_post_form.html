@@ -5,17 +5,19 @@
   <div class="col-md-12">
     <div class="box box-info">
         <div class="box-header with-border">
-          <h3 class="box-title">{{title}}</h3>
+          <h3 class="box-title">{{msg}}</h3>
         </div>
         <!-- /.box-header -->
         <!-- form start -->
-        <form class="form-horizontal" method="POST" action="{% url 'employer_app:upd-profile' 1 %}">
+        <form class="form-horizontal" method="POST" action="{% url 'employer_app:job-post' jobpost.id %}">
 		{% csrf_token %}
           <div class="box-body">
             <div class="form-group">
               <label for="" class="col-md-3 control-label">Company Name</label>
               <div class="col-md-7">
+			    <input type="hidden" name="com-id" value="{{emp.id}}" class="form-control">
                 <input type="text" name="com-name" value="{{emp.company_name}}" class="form-control" placeholder="Company Name" READONLY>
+				
               </div>
             </div>
             <div class="form-group">
@@ -45,14 +47,14 @@
             <div class="form-group">
               <label for="" class="col-md-3 control-label">Job Title</label>
               <div class="col-md-7">
-                <input type="text" name="job-title" value="" class="form-control" placeholder="Job Title">
+                <input type="text" name="job-title" value="{{jobpost.job_title}}" class="form-control" placeholder="Job Title">
               </div>
             </div>
 
             <div class="form-group">
               <label for="" class="col-md-3 control-label">No. of Vacancies</label>
               <div class="col-md-7">
-                <input type="number" name="vacancies" value=""  class="form-control" placeholder="No. of Vacancies">
+                <input type="number" name="vacancies" value="{{jobpost.vacancies}}"  class="form-control" placeholder="No. of Vacancies">
               </div>
             </div>
 

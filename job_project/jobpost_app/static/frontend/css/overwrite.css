@@ -6,5 +6,5 @@
 .panel-default>.panel-heading{}
 .panel-body{padding:5px;}
 .pagination{margin:0px !important;}
-.media {padding:10px 0px; border-bottom:1px dotted #ddd;}
+.media {padding:10px 0px; border-bottom:1px dotted #ddd; overflow:hidden !important;}
 .media-body a{text-decoration:none;}

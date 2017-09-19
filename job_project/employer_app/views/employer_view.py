@@ -68,18 +68,6 @@ class EmployerCrud(View):
 	  
     context={'title': 'Edit Employer Profile','emp':emp, 'industries':self.industries}
     return render(request, self.template, context)
-
-	
-class JobPost(View):
-    template = 'employer_app/job_post_form.html'
-    industries = JobModels.Industry.objects.all()
-    categories = JobModels.Category.objects.all()
-    locations = JobModels.Location.objects.all()
-	
-    def get(self, request, job_id=None):
-      emp=EmpModels.Employer.objects.get(pk=1)
-      context = {'title':'Create or Update Job Post','emp':emp, 'industries':self.industries, 'categories':self.categories, 'locations':self.locations}
-      return render(request, self.template, context)
 	
 	
 	

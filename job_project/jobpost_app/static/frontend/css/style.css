@@ -27,6 +27,17 @@ body {
 .single-data-table h4{font-size: 14px; font-weight: bold;}
 .single-data-table > p {padding-left: 25px;text-align: justify;}
 
+.job-title-list{
+	font-size:12px;
+	padding: 0;
+	margin:5px 0px;
+	list-style-type: none;
+	line-height:20px;
+	color:#999999;
+	}
+	
+	
+
 /* Color */
 .YellowGreen 		{background:#9ACD32}
 .MediumAquaMarine 	{background:#66CDAA}

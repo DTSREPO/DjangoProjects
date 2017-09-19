@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from jobpost_app.models import Location, Industry
+from jobpost_app.models import Location, Category
 #from django.http import HttpResponse
 
 
@@ -7,6 +7,6 @@ from jobpost_app.models import Location, Industry
 def index_view(request):
   template="jobpost_app/frontend/index.html"
   locs=Location.objects.all()
-  ind=Industry.objects.all()
-  context={'title':'Welcome To My Jobs Site', 'locs':locs, 'ind':ind}
+  cats=Category.objects.all()
+  context={'title':'Welcome To My Jobs Site', 'locs':locs, 'cats':cats}
   return render(request, template, context)
