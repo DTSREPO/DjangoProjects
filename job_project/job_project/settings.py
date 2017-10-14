@@ -38,10 +38,12 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     
+    #Custom Apps
     'admin_app',
     'jobpost_app',
     'employer_app',
     'jobseeker_app',
+    'templates_app',
 ]
 
 MIDDLEWARE = [

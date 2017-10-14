@@ -11,10 +11,11 @@ from jobpost_app.views.backend_industry_view import (backend_industry_view, Indu
 from jobpost_app.views.backend_location_view import (backend_location_view, LocationCrud)
 
 urlpatterns = [
+	#Frontend Part
     url(r'^$', index_view, name='index'),
 	
 	#Backend Part
-	url(r'^admin/$', backend_index_view, name='backend_index'),
+	url(r'^admin/dashboard/$', backend_index_view, name='backend_index'),
 	url(r'^admin/category/$', backend_category_view, name='cat-list'),
 	url(r'^admin/category-form/(?P<cat_id>[0-9]*)$', CategoryCrud.as_view(), name='cat-form'),
 	url(r'^admin/industry/$', backend_industry_view, name='ind-list'),

@@ -1,0 +1,1 @@
+C:\Users\Firoz\Desktop\venv\Scripts\activate && python manage.py runserver
